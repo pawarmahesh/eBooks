@@ -1,0 +1,29 @@
+
+docker
+
+platform for building, running and shipping applications
+
+virtual machines - abstraction of machine, resources intensive, slow start
+containers - uses host machine, use less resources, fast
+
+development workflow :
+docker file having instructions to package application into docker image
+container loads docker image
+docker hub can host docker images
+
+
+docker commands:
+docker version
+docker images
+docker run image_name
+docker run -d -p 9090:80 --name webserver nginx:latest
+docker rm image_id
+
+export FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+
+docker ps -a --format=$FORMAT
+
+docker exec it webserver bash
+
+docker build -t website:latest .
+

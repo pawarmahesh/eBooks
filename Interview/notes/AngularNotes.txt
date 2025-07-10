@@ -1,0 +1,38 @@
+#############[ Angular Notes ]#############
+
+1. Software pre-requisites
+node.js + npm
+vs code
+angular cli
+
+Installation :
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install nodejs
+
+node -v
+npm -v
+
+2. Install angular cli from  terminal
+sudo npm install -g @angular/cli
+ng version
+
+
+3. Create new Angular app using cli
+ng new [app-name]
+
+4. Add angular material 
+ng add @angular/material
+
+5. Run angular app
+ go to directory from terminal
+ng serve --open
+
+6. Create new ...
+i) Component
+ng g c [component-name]
+
+ii) Service
+ng g s [service-name]
+
+ii) Authority guard
+ng g guard [guard-name]

@@ -1,0 +1,34 @@
+Apache kafka - Event streaming platform
+
+Event streaming:
+1. To publish (write) and to subscribe (read) stream of events, including continous import/export of your data from other systems.
+2. To store stream of events durably and reliably as long as you want.
+3. To proecss streams of events as they occur or retrospectively.
+
+Architecture:
+Kafka is distributed system consisting of servers and clients communicating via high perfomance TCP n/w protocol.
+Servers : some servers form storage layer called "Broker", other servers run "Kafka Connect" to continously import/ export data as events streams.
+Clients : clients have "Kafka Streams" library which allows you to write distributed applications and microservices that read, write and process streams of events in parallel,
+          at scale and in fault-tolerant manner.
+
+Concepts:
+event: also know as record/ message. It has key, value, timestamp and optional metadata header.
+producer: client that publish (write) events to kafka.
+consumers: clients that susbcribe to (read and process) the events.
+topics: events are organized and durably stored in topics. Topics can have 0 or more producers write and 0 or more consumers can read events.
+partition: Topics are partitioned, meaning a topic is spread over a number of "buckets" located on different kafka brokers.
+replication: to make you data fault-tolerent, every topic is replicated, across ge-regions or datacenters. A common setting in production is replication factor of 3.
+
+APIs:
+Admin API: To manage and inspect topics, brokers and other kafka objects.
+Producer API: To publish (write) stream of events to one or more Kafka topics.
+Consumer API: To subscribe (read) one or more topics and to process the stream of events produced to them.
+Kafka Streams API: It provides higher-level functions to process event streams, including transformations, stateful operations like aggregations and joins, windowing, processing
+                   based on event-time, and more.
+Kafka Connect API: To build and run reusable data import/export connectors that consume (read) or produce (write) streams of events from and to external systems and applications
+                   so they can integrate with Kafka.
+                   
+
+
+
+

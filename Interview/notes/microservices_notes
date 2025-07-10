@@ -1,0 +1,33 @@
+Microservices using Spring Boot
+
+Intro  https://spring.io/microservices
+
+
+Microservices concepts: (Spring Boot v3) 
+1. Communication - Eureka server & client
+2. Configuration - Spring Cloud Config server
+3. Fault tolerance - Resilience4j
+4. Routing	- Zuul
+5. Event driven - Spring Cloud Stream, Kafka
+6. Observability - Micrometer, Zipkin
+7. Security - OAuth2, JWT
+8. Deployment - Cloud Foundry, Docker, Kubernates
+9. Monitoring - Prometheus, Grafana
+10.Logging - ELK
+
+
+* Logstash 
+https://www.elastic.co/downloads/logstash
+
+* Elasticsearch
+https://www.elastic.co/downloads/elasticsearch
+
+* Kibana
+https://www.elastic.co/downloads/kibana
+
+* Prometheus
+https://prometheus.io/download/
+
+* Grafana
+https://grafana.com/grafana/download?edition=oss&pg=get&plcmt=selfmanaged-box1-cta1&platform=linux
+

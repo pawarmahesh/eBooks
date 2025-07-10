@@ -1,0 +1,62 @@
+Kubernetes
+Open source container orchestration tool developed by google.
+It helps to manage containerized applications in different envs like physical, remote, virtual or cloud.
+
+* components:
+pod : abstraction of containers
+service : communication between pods
+ingress : route traffic into cluster
+ConfigMap : external configurations
+Secrets : passwords storage
+volumes : data persistance
+deployment : pod creation using blueprint
+StatefulSet : usuaaly used for database application to persist state
+
+* architecture:
+1. worker nodes: each worker node can have multiple pods.
+   services running on worker nodes :
+ a. container runtime (e.g. docker) - each application pods have container running inside
+ b. kubelet - interacts with both container runtime and node
+ c. kube proxy - forwading requests from services to pod
+2. master nodes: management of pods on worker nodes.
+   services running on master nodes :
+ a. API server - client can intract with cluster using API server
+ b. schedular - it decide where to put new pod on which worker node
+ c. controller manager - tracks status of pods and re-create pods when dead using schedular
+ d. etcd - key_value data store which have state changes of cluster
+ 
+* local setup: minikube & kubectl
+minikube : one node cluster with 1 master and 1 worker nodes having docker installed, it uses virtual box.
+kubectl : CLI client to intract with k8s.
+- For minikube need virtualisation tool, for ubuntu kvm2 driver can be used for virtualization.
+- minikube comes with kubectl and docker
+
+* kubectl commands:
+- CRUD commands
+Create deployment: 	kubectl create deployment [name]
+Edit deployment: 	kubectl edit deployment [name]
+Delete deployment: 	kubectl delete deployment [name]
+
+- Status of different K8s components
+Get status:		kubectl get node|pod|service|replicaset|deployment
+
+- Debugging pods
+Log to console:		kubectl logs [pod name]
+Interactive terminal:	kubectl exec -it [pod name] -- bin/bash
+Get info about pod:	kubectl describe pod [pod name]
+
+- Use configuration file for CRUD
+Apply a config file:	kubectl apply -f [file name]
+Delete with file:	kubectl delete -f [file name]
+
+* Configuration file in K8s
+file contents:
+- metadata: name, label
+- specification: selector, template (as per kind of component)
+- status: 
+
+
+
+
+
+
